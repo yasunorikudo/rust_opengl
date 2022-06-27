@@ -14,7 +14,7 @@ fn main() {
         .unwrap();
 
     let mut canvas = window.into_canvas().build().unwrap();
-    canvas.set_draw_color(Color::RGB(255, 255, 255));
+    canvas.set_draw_color(Color::RGB(0, 255, 255));
     canvas.clear();
     canvas.present();
 
@@ -31,8 +31,10 @@ fn main() {
             }
         }
 
+        canvas.set_draw_color(Color::RGB(0, 255, 255));
+        canvas.clear();
         canvas.present();
 
-        ::std::thread::sleep(Duration::new(0, 1_000_000_000u32 / 60));
+        ::std::thread::sleep(Duration::new(0, 1_000_000_000u32 / 10));
     }
 }

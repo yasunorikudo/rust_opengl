@@ -1,6 +1,7 @@
-#version 140
+#version 330
 
 in vec2 TexCoords;
+out vec4 FragColor;
 
 uniform sampler2D uScreenTexture;
 uniform float uScreenHeight;
@@ -32,5 +33,5 @@ void main()
 {
     float n1 = noise1(TexCoords.y*uScreenHeight);
     float n2 = noise2(TexCoords.y*uScreenHeight, uTime);
-    gl_FragColor = vec4(texture(uScreenTexture, TexCoords).rgb*n1*n2, 1.0);
+    FragColor = vec4(texture(uScreenTexture, TexCoords).rgb*n1*n2, 1.0);
 }

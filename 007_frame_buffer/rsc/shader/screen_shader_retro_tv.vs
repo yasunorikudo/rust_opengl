@@ -1,7 +1,7 @@
-#version 140
+#version 330
 
-in vec3 iPosition;
-in vec2 iTexCoords;
+layout(location = 0) in vec3 iPosition;
+layout(location = 1) in vec2 iTexCoords;
 
 out vec2 TexCoords;
 

@@ -1,6 +1,7 @@
-#version 140
+#version 330
 
 in vec2 TexCoords;
+out vec4 FragColor;
 
 uniform sampler2D uScreenTexture;
 
@@ -22,5 +23,5 @@ void main()
                 uScreenTexture, TexCoords + vec2(-tex_offset.x*x, -tex_offset.y*y)).rgb;
         }
     }
-    gl_FragColor = vec4(original_color + color, 1.0);
+    FragColor = vec4(original_color + color, 1.0);
 }

@@ -1,4 +1,4 @@
-#version 140
+#version 330
 
 struct Material {
     vec3 specular;
@@ -16,6 +16,7 @@ in float Alpha;
 in vec3 FragPosition;
 in vec3 Normal;
 in vec2 TexCoords;
+out vec4 FragColor;
 
 uniform sampler2D uScreenTexture;
 uniform vec3 uViewPosition;
@@ -41,5 +42,5 @@ void main()
 
     vec3 result = ambient + diffuse + specular;
 
-    gl_FragColor = vec4(result, Alpha);
+    FragColor = vec4(result, Alpha);
 }
